@@ -85,7 +85,7 @@ function scene:create( event )
 
     local numLetter=9
     local r=math.random(0,numLetter)
-    print(r)
+    --print(r)
     i=r
     hear()
     draw()
