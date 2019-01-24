@@ -7,6 +7,9 @@ local bg
 local track
 
 
+local function gotoMenu()
+	composer.gotoScene( "menu", { time=800, effect="crossFade" } )
+end
 
 
 -- -----------------------------------------------------------------------------------
@@ -89,6 +92,7 @@ function scene:create( event )
     i=r
     hear()
     draw()
+
     local pronButton = display.newImageRect( sceneGroup, "images/sound.png", 50, 50 )
     pronButton.x=display.contentCenterX+150
     pronButton.y=display.contentCenterY-450
@@ -138,6 +142,142 @@ function scene:create( event )
     end
     
     assign()
+    
+    
+    local function correct()
+        
+            local right = display.newImageRect( sceneGroup, "images/right.png" , 120, 240 )
+    
+            right.x = display.contentCenterX
+	        right.y = display.contentCenterY
+
+            
+            composer.removeScene("matching")
+            composer.gotoScene( "matching", { time=800, effect="crossFade" } )
+        
+    end
+    local function mistake1()
+        
+            local wrong = display.newImageRect( sceneGroup, "images/wrong.png" , 200, 400 )
+    
+            wrong.x = display.contentCenterX-100
+	        wrong.y = display.contentCenterY-200
+            local wrongTrack
+        
+            wrongTrack = audio.loadStream( "audio/Wrong.mp3" )
+            audio.play( wrongTrack, { channel=1, loops=0 } )
+
+        
+    end
+    local function mistake2()
+        
+            local wrong = display.newImageRect( sceneGroup, "images/wrong.png" , 200, 400 )
+    
+            wrong.x = display.contentCenterX+100
+	        wrong.y = display.contentCenterY-200
+            local wrongTrack
+        
+            wrongTrack = audio.loadStream( "audio/Wrong.mp3" )
+            audio.play( wrongTrack, { channel=1, loops=0 } )
+        
+    end
+    local function mistake3()
+        
+            local wrong = display.newImageRect( sceneGroup, "images/wrong.png" , 200, 400 )
+    
+            wrong.x = display.contentCenterX-100
+	        wrong.y = display.contentCenterY+200
+            local wrongTrack
+        
+            wrongTrack = audio.loadStream( "audio/Wrong.mp3" )
+            audio.play( wrongTrack, { channel=1, loops=0 } )
+        
+    end
+    local function mistake4()
+        
+            local wrong = display.newImageRect( sceneGroup, "images/wrong.png" , 200, 400 )
+    
+            wrong.x = display.contentCenterX+100
+	        wrong.y = display.contentCenterY+200
+            local wrongTrack
+        
+            wrongTrack = audio.loadStream( "audio/Wrong.mp3" )
+            audio.play( wrongTrack, { channel=1, loops=0 } )
+        
+    end
+    
+    
+
+
+    i=i1
+    draw()
+    
+    local option1 = display.newImageRect( sceneGroup, bg , 200, 400 )
+    
+	option1.x = display.contentCenterX-100
+	option1.y = display.contentCenterY-200
+    if(i==r) then
+        option1:addEventListener( "tap", correct )
+    else
+        option1:addEventListener( "tap", mistake1 )
+
+    end
+    i=i2
+    draw()
+    local option2 = display.newImageRect( sceneGroup, bg , 200, 400 )
+    
+	option2.x = display.contentCenterX+100
+	option2.y = display.contentCenterY-200
+    if(i==r) then
+        option2:addEventListener( "tap", correct )
+    else
+        option2:addEventListener( "tap", mistake2 )
+
+    end
+    i=i3
+    draw()
+    local option3 = display.newImageRect( sceneGroup, bg , 200, 400 )
+    
+	option3.x = display.contentCenterX-100
+	option3.y = display.contentCenterY+200
+    if(i==r) then
+        option3:addEventListener( "tap", correct )
+    else
+        option3:addEventListener( "tap", mistake3 )
+
+    end
+    i=i4
+    draw()
+    local option4 = display.newImageRect( sceneGroup, bg , 200, 400 )
+    
+	option4.x = display.contentCenterX+100
+	option4.y = display.contentCenterY+200
+    if(i==r) then
+        option4:addEventListener( "tap", correct )
+    else
+        option4:addEventListener( "tap", mistake4 )
+
+    end
+        
+    local menuButton = display.newText( sceneGroup, "MENU", display.contentCenterX, 20, native.systemFont, 44 )
+	menuButton:setFillColor( 1, 1, 1 )
+	menuButton:addEventListener( "tap", gotoMenu )
+    function afterTimer()
+        print("Timer is done!")
+        print("Now do something else")
+    end
+    
+
+
+
+
+    local musicTrack2
+        
+    musicTrack2 = audio.loadStream( track )
+    audio.play( musicTrack2, { channel=1, loops=0 } )
+
+    
+    
 
 
 
