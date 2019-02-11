@@ -47,7 +47,7 @@ function scene:create( event )
             bg="images/beng.png"
             track="audio/umo.mp3"
         elseif(i==5) then
-            bg="images/Chuul.png"
+            bg="images/chuul.png"
             track="audio/cho.mp3"
         elseif(i==6) then
             bg="images/Chho-te-chaya.png"
@@ -62,7 +62,7 @@ function scene:create( event )
 --            bg="images/Oushodh.png"
 --            track="audio/nio.mp3"
         elseif(i==10) then
-            bg="images/tia-pakhi.png"
+            bg="images/Tia-pakhi.png"
             track="audio/to.mp3"
         elseif(i==11) then
             bg="images/thelagari.png"

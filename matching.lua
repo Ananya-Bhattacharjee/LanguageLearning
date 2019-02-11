@@ -142,18 +142,35 @@ function scene:create( event )
     end
     
     assign()
-    
+    local function next()
+            composer.removeScene("matching")
+            composer.gotoScene( "balloon", { time=800, effect="crossFade" } )
+
+        
+    end
     
     local function correct()
         
             local right = display.newImageRect( sceneGroup, "images/right.png" , 120, 240 )
-    
+            local clock = os.clock
+            function sleep(n)  -- seconds
+              local t0 = clock()
+              while clock() - t0 <= n do end
+            end
+        
             right.x = display.contentCenterX
 	        right.y = display.contentCenterY
-
             
-            composer.removeScene("matching")
-            composer.gotoScene( "matching", { time=800, effect="crossFade" } )
+            local correctTrack
+        
+            correctTrack = audio.loadStream( "audio/balloon.mp3" )
+            audio.play( correctTrack, { channel=1, loops=0 } )
+            sleep(2)
+            next()
+        
+            
+
+
         
     end
     local function mistake1()
