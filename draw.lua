@@ -30,6 +30,11 @@ function scene:create( event )
 	background.x = display.contentCenterX
 	background.y = display.contentCenterY
 
+    
+    background = display.newImageRect( sceneGroup, "images/letters/soreo.png", 800, 1400 )
+	background.x = display.contentCenterX
+	background.y = display.contentCenterY
+
     local line                      --variable to hold the line object
     local initX                     --initial X coordinate of touch
     local initY                     --initial Y coordinate of touch
@@ -58,7 +63,7 @@ function scene:create( event )
                 --Make new line object, set color, and stroke width
                 line = display.newLine(initX, initY, locationX, locationY)
                 line:setStrokeColor( 0, 0, 1 )
-                line.strokeWidth = 20
+                line.strokeWidth = 40
 
                 --set line created flag to true
                 lineCreated = true
