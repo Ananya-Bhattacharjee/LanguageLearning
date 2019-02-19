@@ -26,30 +26,54 @@ function scene:create( event )
 
 	local sceneGroup = self.view
 	-- Code here runs when the scene is first created but has not yet appeared on screen
-
-	local background = display.newImageRect( sceneGroup, "background.png", 800, 1400 )
+    local background = display.newImageRect( sceneGroup, "whiteBackground.jpg", 800, 1400 )
 	background.x = display.contentCenterX
 	background.y = display.contentCenterY
 
+    local line                      --variable to hold the line object
+    local initX                     --initial X coordinate of touch
+    local initY                     --initial Y coordinate of touch
+    local lineCreated = false       --Flag to check if line is already created 
 
-	local lettersButton = display.newText( sceneGroup, "LETTERS", display.contentCenterX, 300, native.systemFont, 44 )
-	lettersButton:setFillColor( 0.82, 0.6, 1 )
+    --Create the 'brush'
+    function paint(event)
+        locationX = event.x
+        locationY = event.y
+        if event.phase == "began" then   --first touch
+            --Delete previous line (in this case no multiple lines)
+            if(line) then
+                --line:removeSelf()
+                --line = nil
+            end
+
+            --Set initX and initY with current touch location           
+            initX = locationX       
+            initY = locationY
+        elseif event.phase == "moved" then   --during touch movement
+            if lineCreated then
+                --line has been created, just append to existing line
+                line:append(locationX, locationY)
+            else
+                --Line has not been created
+                --Make new line object, set color, and stroke width
+                line = display.newLine(initX, initY, locationX, locationY)
+                line:setStrokeColor( 0, 0, 1 )
+                line.strokeWidth = 20
+
+                --set line created flag to true
+                lineCreated = true
+            end     
+        elseif event.phase == "ended" or event.phase == "cancelled" then --touch lifted
+            --append last touch location to the line
+            line:append(locationX, locationY)   
+        end
+        return true
+    end
+
+    Runtime:addEventListener("touch", paint)
 
 
-	lettersButton:addEventListener( "tap", gotoLetters )
 
-    
-	local matchButton = display.newText( sceneGroup, "MATCH", display.contentCenterX, 500, native.systemFont, 44 )
-	matchButton:setFillColor( 0.82, 0.6, 1 )
-
-
-	matchButton:addEventListener( "tap", gotoMatching )
-
-    
-    
-    local drawButton = display.newText( sceneGroup, "DRAW", display.contentCenterX, 700, native.systemFont, 44 )
-	drawButton:setFillColor( 0.82, 0.6, 1 )
-	drawButton:addEventListener( "tap", gotoDraw )
 
 end
 
