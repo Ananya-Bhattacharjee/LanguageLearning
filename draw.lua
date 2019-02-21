@@ -39,6 +39,48 @@ function scene:create( event )
     local initX                     --initial X coordinate of touch
     local initY                     --initial Y coordinate of touch
     local lineCreated = false       --Flag to check if line is already created 
+    
+    
+    
+    local flag=0
+    local penoreraser="images/eraser.jpg"
+
+    local drButton = display.newImageRect( sceneGroup, penoreraser, 50, 50 )
+    drButton.x=display.contentCenterX-270
+    drButton.y=display.contentCenterY
+
+    local function drawing()
+
+        if(flag==0)then
+            flag=1
+            penoreraser="images/pencil.jpg"
+        else
+            flag=0
+            penoreraser="images/eraser.jpg"
+        end
+        
+        drButton = display.newImageRect( sceneGroup, penoreraser, 50, 50 )
+        drButton.x=display.contentCenterX-270
+        drButton.y=display.contentCenterY
+
+
+
+    end
+
+    
+    
+    
+    
+    
+    
+    
+    drButton:addEventListener( "tap", drawing )
+    --proButton:setFillColor( 0, 0.6, 1 )
+	
+        
+    
+    
+    
 
     --Create the 'brush'
     function paint(event)
@@ -62,7 +104,11 @@ function scene:create( event )
                 --Line has not been created
                 --Make new line object, set color, and stroke width
                 line = display.newLine(initX, initY, locationX, locationY)
-                line:setStrokeColor( 0, 0, 1 )
+                if(flag==0) then
+                    line:setStrokeColor( 0, 0, 1 )
+                else
+                    line:setStrokeColor( 1, 1, 1 )
+                end
                 line.strokeWidth = 40
 
                 --set line created flag to true
@@ -70,7 +116,8 @@ function scene:create( event )
             end     
         elseif event.phase == "ended" or event.phase == "cancelled" then --touch lifted
             --append last touch location to the line
-            line:append(locationX, locationY)   
+            --line:append(locationX, locationY)
+            lineCreated=false
         end
         return true
     end
