@@ -50,15 +50,24 @@ function scene:create( event )
             bg="images/Urdhomukhi.png"
             track="audio/dirghou.mp3"
         elseif(i==6) then
+            local tempground = display.newImageRect( sceneGroup, "whiteBackground.jpg", 600, 1200 )
+
+            tempground.x = display.contentCenterX
+            tempground.y = display.contentCenterY
+
+            bg="images/ri.png"
+            track="audio/ri.mp3"
+
+        elseif(i==7) then
             bg="images/ekush.png"
             track="audio/ae.mp3"
-        elseif(i==7) then
+        elseif(i==8) then
             bg="images/Oirabot.png"
             track="audio/oi.mp3"
-        elseif(i==8) then
+        elseif(i==9) then
             bg="images/Ojon-baksho.png"
             track="audio/o.mp3"
-        elseif(i==9) then
+        elseif(i==10) then
             bg="images/Oushodh.png"
             track="audio/ou.mp3"
         end
@@ -77,7 +86,7 @@ function scene:create( event )
         local pronButton = display.newImageRect( sceneGroup, "images/sound.png", 50, 50 )
         pronButton.x=display.contentCenterX+150
         pronButton.y=display.contentCenterY-450
-        local menu2Button = display.newText( sceneGroup, "MENU", display.contentCenterX, 50, native.systemFont, 44 )
+        local menu2Button = display.newText( sceneGroup, "মেনু", display.contentCenterX, 50, native.systemFont, 44 )
         menu2Button:setFillColor( 0, 0, 0 )
 	    --menuButton:addEventListener( "tap", gotoMenu )
     
@@ -87,7 +96,7 @@ function scene:create( event )
     
     local function inVowelsNext()
         i=i+1
-        if(i==10) then
+        if(i==11) then
             i=0
         end
         print(i)
@@ -98,7 +107,7 @@ function scene:create( event )
     local function inVowelsPrev()
         i=i-1
         if(i==-1) then
-            i=9
+            i=10
         end
         print(i)
         draw()
@@ -115,7 +124,7 @@ function scene:create( event )
 
     end
     
-    local menuButton = display.newText( sceneGroup, "MENU", display.contentCenterX, 50, native.systemFont, 44 )
+    local menuButton = display.newText( sceneGroup, "মেনু", display.contentCenterX, 50, native.systemFont, 44 )
 	menuButton:setFillColor( 0, 0, 0 )
 	menuButton:addEventListener( "tap", gotoMenu )
 

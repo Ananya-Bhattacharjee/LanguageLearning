@@ -43,13 +43,141 @@ function scene:create( event )
         elseif(i==5) then
             bg="images/Urdhomukhi.png"
         elseif(i==6) then
-            bg="images/ekush.png"
+
+            bg="images/ri.png"
+--            track="audio/ri.mp3"
+
         elseif(i==7) then
-            bg="images/Oirabot.png"
+            bg="images/ekush.png"
+            --track="audio/ae.mp3"
         elseif(i==8) then
-            bg="images/Ojon-baksho.png"
+            bg="images/Oirabot.png"
+            --track="audio/oi.mp3"
         elseif(i==9) then
+            bg="images/Ojon-baksho.png"
+            --track="audio/o.mp3"
+        elseif(i==10) then
             bg="images/Oushodh.png"
+            --track="audio/ou.mp3"
+        elseif(i==11) then
+            bg="images/Ko-te-kaak.png"
+            --track="audio/ko.mp3"
+        elseif(i==12) then
+            bg="images/khorghosh.png"
+            --track="audio/kho.mp3"
+        elseif(i==13) then
+            bg="images/Go-te-gaach.png"
+            --track="audio/go.mp3"
+        elseif(i==14) then
+            bg="images/Gho-te-ghori.png"
+            --track="audio/gho.mp3"
+        elseif(i==15) then
+            bg="images/beng.png"
+            --track="audio/umo.mp3"
+        elseif(i==16) then
+            bg="images/chuul.png"
+            --track="audio/cho.mp3"
+        elseif(i==17) then
+            bg="images/Chho-te-chaya.png"
+            --track="audio/chho.mp3"
+        elseif(i==18) then
+            bg="images/jilapi.png"
+            --track="audio/jo.mp3"
+        elseif(i==19) then
+            bg="images/Jhinuuk.png"
+            --track="audio/jhho.mp3"
+        elseif(i==20) then
+            bg="images/nio.png"
+            --track="audio/nio.mp3"
+        elseif(i==21) then
+            bg="images/Tia-pakhi.png"
+            --track="audio/to.mp3"
+        elseif(i==22) then
+            bg="images/thelagari.png"
+            --track="audio/tho.mp3"
+        elseif(i==23) then
+            bg="images/daalim.png"
+            --track="audio/do.mp3"
+        elseif(i==24) then
+            bg="images/dhhol.png"
+            --track="audio/dho.mp3"
+        elseif(i==25) then
+            bg="images/Horin.png"
+            --track="audio/murdhonno.mp3"
+        elseif(i==26) then
+            bg="images/Tara.png"
+            --track="audio/to2.mp3"
+        elseif(i==27) then
+            bg="images/Tho.png"
+            --track="audio/tho2.mp3"
+        elseif(i==28) then
+            bg="images/dolna.png"
+            --track="audio/do2.mp3"
+        elseif(i==29) then
+            bg="images/Dho-te-dhoa.png"
+            --track="audio/dho2.mp3"
+        elseif(i==30) then
+            bg="images/Nouka.png"
+            --track="audio/no.mp3"
+        elseif(i==31) then
+            bg="images/projapoti.png"
+            --track="audio/po.mp3"
+        elseif(i==32) then
+            bg="images/Foring.png"
+            --track="audio/pho.mp3"
+        elseif(i==33) then
+            bg="images/Bo-te-bandor.png"
+            --track="audio/bo.mp3"
+        elseif(i==34) then
+            bg="images/valluuk.png"
+            --track="audio/bho.mp3"
+        elseif(i==35) then
+            bg="images/Mo-te-maach.png"
+            --track="audio/mo.mp3"
+        elseif(i==36) then
+            bg="images/Jontro.png"
+            --track="audio/jo2.mp3"
+        elseif(i==37) then
+            bg="images/roshi.png"
+            --track="audio/ro.mp3"
+        elseif(i==38) then
+            bg="images/Lota-pata.png"
+            --track="audio/lo.mp3"
+        elseif(i==39) then
+            bg="images/shaapla.png"
+            --track="audio/so1.mp3"
+        elseif(i==40) then
+            bg="images/Shaar.png"
+            --track="audio/so2.mp3"
+        elseif(i==41) then
+            bg="images/cycle.png"
+            --track="audio/so3.mp3"
+        elseif(i==42) then
+            bg="images/haash.png"
+            --track="audio/ho.mp3"
+        elseif(i==43) then
+            bg="images/Shaari.png"
+            --track="audio/ro2.mp3"
+        elseif(i==44) then
+            bg="images/dhoishunnoro.png"
+            --track="audio/ro3.mp3"
+        elseif(i==45) then
+            bg="images/moyna.png"
+            --track="audio/o2.mp3"
+        elseif(i==46) then
+            bg="images/hothaat.png"
+            --track="audio/khondotto.mp3"
+        elseif(i==47) then
+            bg="images/onuswar.png"
+            --bg="images/roshi.png"
+            --track="audio/onuswar.mp3"
+        elseif(i==48) then
+            bg="images/bisorgo.png"
+--            track="audio/bisorgo.mp3"
+        elseif(i==49) then
+            bg="images/chondrobindu.png"
+--            track="audio/chondrobindu.mp3"
+
         end	    
     end
     
@@ -67,13 +195,139 @@ function scene:create( event )
         elseif(i==5) then
             track="audio/dirghou.mp3"
         elseif(i==6) then
-            track="audio/ae.mp3"
+            track="audio/ri.mp3"
+
         elseif(i==7) then
-            track="audio/oi.mp3"
+            --bg="images/ekush.png"
+            track="audio/ae.mp3"
         elseif(i==8) then
-            track="audio/o.mp3"
+            --bg="images/Oirabot.png"
+            track="audio/oi.mp3"
         elseif(i==9) then
+            --bg="images/Ojon-baksho.png"
+            track="audio/o.mp3"
+        elseif(i==10) then
+            --bg="images/Oushodh.png"
             track="audio/ou.mp3"
+        elseif(i==11) then
+            --bg="images/Ko-te-kaak.png"
+            track="audio/ko.mp3"
+        elseif(i==12) then
+            --bg="images/khorghosh.png"
+            track="audio/kho.mp3"
+        elseif(i==13) then
+            --bg="images/Go-te-gaach.png"
+            track="audio/go.mp3"
+        elseif(i==14) then
+            --bg="images/Gho-te-ghori.png"
+            track="audio/gho.mp3"
+        elseif(i==15) then
+            --bg="images/beng.png"
+            track="audio/umo.mp3"
+        elseif(i==16) then
+            --bg="images/chuul.png"
+            track="audio/cho.mp3"
+        elseif(i==17) then
+            --bg="images/Chho-te-chaya.png"
+            track="audio/chho.mp3"
+        elseif(i==18) then
+            --bg="images/jilapi.png"
+            track="audio/jo.mp3"
+        elseif(i==19) then
+            --bg="images/Jhinuuk.png"
+            track="audio/jhho.mp3"
+        elseif(i==20) then
+            --bg="images/nio.png"
+            track="audio/nio.mp3"
+        elseif(i==21) then
+            --bg="images/Tia-pakhi.png"
+            track="audio/to.mp3"
+        elseif(i==22) then
+            --bg="images/thelagari.png"
+            track="audio/tho.mp3"
+        elseif(i==23) then
+            --bg="images/daalim.png"
+            track="audio/do.mp3"
+        elseif(i==24) then
+            --bg="images/dhhol.png"
+            track="audio/dho.mp3"
+        elseif(i==25) then
+            --bg="images/Horin.png"
+            track="audio/murdhonno.mp3"
+        elseif(i==26) then
+            --bg="images/Tara.png"
+            track="audio/to2.mp3"
+        elseif(i==27) then
+            --bg="images/Tho.png"
+            track="audio/tho2.mp3"
+        elseif(i==28) then
+            --bg="images/dolna.png"
+            track="audio/do2.mp3"
+        elseif(i==29) then
+            --bg="images/Dho-te-dhoa.png"
+            track="audio/dho2.mp3"
+        elseif(i==30) then
+            bg="images/Nouka.png"
+            --track="audio/no.mp3"
+        elseif(i==31) then
+            --bg="images/projapoti.png"
+            track="audio/po.mp3"
+        elseif(i==32) then
+            --bg="images/Foring.png"
+            track="audio/pho.mp3"
+        elseif(i==33) then
+            --bg="images/Bo-te-bandor.png"
+            track="audio/bo.mp3"
+        elseif(i==34) then
+            --bg="images/valluuk.png"
+            track="audio/bho.mp3"
+        elseif(i==35) then
+            --bg="images/Mo-te-maach.png"
+            track="audio/mo.mp3"
+        elseif(i==36) then
+            --bg="images/Jontro.png"
+            track="audio/jo2.mp3"
+        elseif(i==37) then
+            --bg="images/roshi.png"
+            track="audio/ro.mp3"
+        elseif(i==38) then
+            bg="images/Lota-pata.png"
+            --track="audio/lo.mp3"
+        elseif(i==39) then
+            --bg="images/shaapla.png"
+            track="audio/so1.mp3"
+        elseif(i==40) then
+            --bg="images/Shaar.png"
+            track="audio/so2.mp3"
+        elseif(i==41) then
+            --bg="images/cycle.png"
+            track="audio/so3.mp3"
+        elseif(i==42) then
+            --bg="images/haash.png"
+            track="audio/ho.mp3"
+        elseif(i==43) then
+            --bg="images/Shaari.png"
+            track="audio/ro2.mp3"
+        elseif(i==44) then
+            --bg="images/dhoishunnoro.png"
+            track="audio/ro3.mp3"
+        elseif(i==45) then
+            --bg="images/moyna.png"
+            track="audio/o2.mp3"
+        elseif(i==46) then
+            --bg="images/hothaat.png"
+            track="audio/khondotto.mp3"
+        elseif(i==47) then
+            --bg="images/onuswar.png"
+            --bg="images/roshi.png"
+            track="audio/onuswar.mp3"
+        elseif(i==48) then
+--            bg="images/bisorgo.png"
+            track="audio/bisorgo.mp3"
+        elseif(i==49) then
+--            bg="images/chondrobindu.png"
+            track="audio/chondrobindu.mp3"
+
         end
     end
     
@@ -86,7 +340,7 @@ function scene:create( event )
     end
 
 
-    local numLetter=9
+    local numLetter=49
     local r=math.random(0,numLetter)
     --print(r)
     i=r
@@ -276,7 +530,7 @@ function scene:create( event )
 
     end
         
-    local menuButton = display.newText( sceneGroup, "MENU", display.contentCenterX, 20, native.systemFont, 44 )
+    local menuButton = display.newText( sceneGroup, "মেনু", display.contentCenterX, 20, native.systemFont, 44 )
 	menuButton:setFillColor( 1, 1, 1 )
 	menuButton:addEventListener( "tap", gotoMenu )
     function afterTimer()

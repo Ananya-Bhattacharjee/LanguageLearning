@@ -59,8 +59,13 @@ function scene:create( event )
             bg="images/Jhinuuk.png"
             track="audio/jhho.mp3"
         elseif(i==9) then
---            bg="images/Oushodh.png"
---            track="audio/nio.mp3"
+            local tempground = display.newImageRect( sceneGroup, "whiteBackground.jpg", 600, 1200 )
+
+            tempground.x = display.contentCenterX
+            tempground.y = display.contentCenterY
+            bg="whiteBackground.jpg"
+            bg="images/nio.png"
+            track="audio/nio.mp3"
         elseif(i==10) then
             bg="images/Tia-pakhi.png"
             track="audio/to.mp3"
@@ -131,7 +136,11 @@ function scene:create( event )
             bg="images/Shaari.png"
             track="audio/ro2.mp3"
         elseif(i==33) then
-            bg="images/dhhol.png"
+            local tempground = display.newImageRect( sceneGroup, "whiteBackground.jpg", 600, 1200 )
+
+            tempground.x = display.contentCenterX
+            tempground.y = display.contentCenterY
+            bg="images/dhoishunnoro.png"
             track="audio/ro3.mp3"
         elseif(i==34) then
             bg="images/moyna.png"
@@ -140,11 +149,20 @@ function scene:create( event )
             bg="images/hothaat.png"
             track="audio/khondotto.mp3"
         elseif(i==36) then
+            local tempground = display.newImageRect( sceneGroup, "whiteBackground.jpg", 600, 1200 )
+
+            tempground.x = display.contentCenterX
+            tempground.y = display.contentCenterY
+            bg="images/onuswar.png"
             --bg="images/roshi.png"
-            --track="audio/o.mp3"
+            track="audio/onuswar.mp3"
         elseif(i==37) then
-            --bg="images/Lota-pata"
-            --track="audio/ou.mp3"
+            local tempground = display.newImageRect( sceneGroup, "whiteBackground.jpg", 600, 1200 )
+
+            tempground.x = display.contentCenterX
+            tempground.y = display.contentCenterY
+            bg="images/bisorgo.png"
+            track="audio/bisorgo.mp3"
         elseif(i==38) then
             bg="images/chondrobindu.png"
             track="audio/chondrobindu.mp3"
@@ -166,7 +184,7 @@ function scene:create( event )
         pronButton.x=display.contentCenterX+150
         pronButton.y=display.contentCenterY-450
     
-        local menu2Button = display.newText( sceneGroup, "MENU", display.contentCenterX, 50, native.systemFont, 44 )
+        local menu2Button = display.newText( sceneGroup, "মেনু", display.contentCenterX, 50, native.systemFont, 44 )
         menu2Button:setFillColor( 0, 0, 0 )
 
 	    
@@ -202,7 +220,7 @@ function scene:create( event )
 
 
     end
-    local menuButton = display.newText( sceneGroup, "MENU", display.contentCenterX, 50, native.systemFont, 44 )
+    local menuButton = display.newText( sceneGroup, "মেনু", display.contentCenterX, 50, native.systemFont, 44 )
 	menuButton:setFillColor( 0, 0, 0 )
 	menuButton:addEventListener( "tap", gotoMenu )
 

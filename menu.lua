@@ -32,23 +32,23 @@ function scene:create( event )
 	background.y = display.contentCenterY
 
 
-	local lettersButton = display.newText( sceneGroup, "LETTERS", display.contentCenterX, 300, native.systemFont, 44 )
-	lettersButton:setFillColor( 0.82, 0.6, 1 )
+	local lettersButton = display.newText( sceneGroup, "বর্ণমালা", display.contentCenterX, 300, native.systemFont, 44 )
+	lettersButton:setFillColor( 0, 0.6, 1 )
 
 
 	lettersButton:addEventListener( "tap", gotoLetters )
 
     
-	local matchButton = display.newText( sceneGroup, "MATCH", display.contentCenterX, 500, native.systemFont, 44 )
-	matchButton:setFillColor( 0.82, 0.6, 1 )
+	local matchButton = display.newText( sceneGroup, "মিলানো", display.contentCenterX, 500, native.systemFont, 44 )
+	matchButton:setFillColor( 0, 0.6, 1 )
 
 
 	matchButton:addEventListener( "tap", gotoMatching )
 
     
     
-    local drawButton = display.newText( sceneGroup, "DRAW", display.contentCenterX, 700, native.systemFont, 44 )
-	drawButton:setFillColor( 0.82, 0.6, 1 )
+    local drawButton = display.newText( sceneGroup,"আঁক", display.contentCenterX, 700, native.systemFont, 44 )
+	drawButton:setFillColor( 0, 0.6, 1 )
 	drawButton:addEventListener( "tap", gotoDraw )
 
 end

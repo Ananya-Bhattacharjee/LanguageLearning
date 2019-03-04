@@ -29,12 +29,12 @@ function scene:create( event )
 	background.y = display.contentCenterY
 
 
-	local vowelsButton = display.newText( sceneGroup, "Vowels", display.contentCenterX, 500, native.systemFont, 44 )
-	vowelsButton:setFillColor( 0.82, 0.6, 1 )
+	local vowelsButton = display.newText( sceneGroup, "স্বরবর্ণ", display.contentCenterX, 500, native.systemFont, 44 )
+	vowelsButton:setFillColor( 0, 0.6, 1 )
 	vowelsButton:addEventListener( "tap", gotoVowels )
     
-    local consonantsButton = display.newText( sceneGroup, "Consonants", display.contentCenterX, 700, native.systemFont, 44 )
-	consonantsButton:setFillColor( 0.82, 0.6, 1 )
+    local consonantsButton = display.newText( sceneGroup, "ব্যঞ্জনবর্ণ", display.contentCenterX, 700, native.systemFont, 44 )
+	consonantsButton:setFillColor( 0, 0.6, 1 )
 	consonantsButton:addEventListener( "tap", gotoConsonants )
 
 end
