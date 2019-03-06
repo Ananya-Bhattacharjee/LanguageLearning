@@ -48,7 +48,7 @@ function scene:create( event )
 	matchButton:setFillColor( 0, 0.6, 1 )
 
 
-	matchButton:addEventListener( "tap", gotoSeeMatching )
+	matchButton:addEventListener( "tap", gotoMatching )
 
 	local matchButton = display.newText( sceneGroup, "দেখি এবং মিলাই", display.contentCenterX, 500, native.systemFont, 44 )
 	matchButton:setFillColor( 0, 0.6, 1 )
