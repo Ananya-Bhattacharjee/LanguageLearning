@@ -9,17 +9,9 @@ local function gotoLetters()
 end
 
 local function gotoMatching()
-	composer.gotoScene( "matching", { time=800, effect="crossFade" } )
-end
-
-local function gotoSeeMatching()
 	composer.gotoScene( "smc", { time=800, effect="crossFade" } )
 end
 
-
-local function gotoDraw()
-	composer.gotoScene( "draw", { time=800, effect="crossFade" } )
-end
 
 
 -- -----------------------------------------------------------------------------------
@@ -32,34 +24,11 @@ function scene:create( event )
 	local sceneGroup = self.view
 	-- Code here runs when the scene is first created but has not yet appeared on screen
 
-	local background = display.newImageRect( sceneGroup, "background.png", 800, 1400 )
+	local background = display.newImageRect( sceneGroup, "images/balloon.jpg", 800, 1400 )
 	background.x = display.contentCenterX
 	background.y = display.contentCenterY
 
-
-	local lettersButton = display.newText( sceneGroup, "বর্ণমালা", display.contentCenterX, 200, native.systemFont, 44 )
-	lettersButton:setFillColor( 0, 0.6, 1 )
-
-
-	lettersButton:addEventListener( "tap", gotoLetters )
-
-    
-	local matchButton = display.newText( sceneGroup, "শুনি এবং মিলাই", display.contentCenterX, 350, native.systemFont, 44 )
-	matchButton:setFillColor( 0, 0.6, 1 )
-
-
-	matchButton:addEventListener( "tap", gotoSeeMatching )
-
-	local matchButton = display.newText( sceneGroup, "দেখি এবং মিলাই", display.contentCenterX, 500, native.systemFont, 44 )
-	matchButton:setFillColor( 0, 0.6, 1 )
-
-
-	matchButton:addEventListener( "tap", gotoSeeMatching)
-    
-    
-    local drawButton = display.newText( sceneGroup,"আঁকি", display.contentCenterX, 650, native.systemFont, 44 )
-	drawButton:setFillColor( 0, 0.6, 1 )
-	drawButton:addEventListener( "tap", gotoDraw )
+	background:addEventListener( "tap", gotoMatching )
 
 end
 
