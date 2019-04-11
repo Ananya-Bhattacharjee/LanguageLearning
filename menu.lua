@@ -4,6 +4,32 @@ local composer = require( "composer" )
 local scene = composer.newScene()
 
 
+local function gotoLevel2()
+    print(2)
+    local sqlite3 = require( "sqlite3" )
+    
+    dri=4
+
+    -- Create a file path for the database file "data.db"
+    composer.gotoScene( "level2.start", { time=800, effect="crossFade" } )
+end
+
+
+local function gotoTrain()
+	composer.gotoScene( "train", { time=800, effect="crossFade" } )
+end
+
+
+local function gotoTest()
+	composer.gotoScene( "test", { time=800, effect="crossFade" } )
+end
+
+local function gotoStart()
+    dri=0
+	composer.gotoScene( "start", { time=800, effect="crossFade" } )
+end
+
+
 local function gotoLetters()
 	composer.gotoScene( "letters", { time=800, effect="crossFade" } )
 end
@@ -36,21 +62,35 @@ function scene:create( event )
 	background.x = display.contentCenterX
 	background.y = display.contentCenterY
 
+	local startButton = display.newText( sceneGroup, "লেভেল ১", display.contentCenterX, 150, native.systemFont, 44 )
+	startButton:setFillColor( 0, 0.6, 1 )
 
-	local lettersButton = display.newText( sceneGroup, "বর্ণমালা", display.contentCenterX, 200, native.systemFont, 44 )
+
+	startButton:addEventListener( "tap", gotoStart )
+    
+    local level2Button = display.newText( sceneGroup, "লেভেল ২", display.contentCenterX, 250, native.systemFont, 44 )
+	level2Button:setFillColor( 0, 0.6, 1 )
+
+
+	level2Button:addEventListener( "tap", gotoLevel2 )
+    
+
+    
+    
+	local lettersButton = display.newText( sceneGroup, "বর্ণমালা", display.contentCenterX, 350, native.systemFont, 44 )
 	lettersButton:setFillColor( 0, 0.6, 1 )
 
 
 	lettersButton:addEventListener( "tap", gotoLetters )
 
     
-	local matchButton = display.newText( sceneGroup, "শুনি এবং মিলাই", display.contentCenterX, 350, native.systemFont, 44 )
+	local matchButton = display.newText( sceneGroup, "শুনি এবং মিলাই", display.contentCenterX, 450, native.systemFont, 44 )
 	matchButton:setFillColor( 0, 0.6, 1 )
 
 
 	matchButton:addEventListener( "tap", gotoMatching )
 
-	local matchButton = display.newText( sceneGroup, "দেখি এবং মিলাই", display.contentCenterX, 500, native.systemFont, 44 )
+	local matchButton = display.newText( sceneGroup, "দেখি এবং মিলাই", display.contentCenterX, 550, native.systemFont, 44 )
 	matchButton:setFillColor( 0, 0.6, 1 )
 
 
@@ -60,7 +100,22 @@ function scene:create( event )
     local drawButton = display.newText( sceneGroup,"আঁকি", display.contentCenterX, 650, native.systemFont, 44 )
 	drawButton:setFillColor( 0, 0.6, 1 )
 	drawButton:addEventListener( "tap", gotoDraw )
+    
+    --local trainButton = display.newText( sceneGroup, "train", display.contentCenterX, 500, native.systemFont, 44 )
+	--trainButton:setFillColor( 0, 0.6, 1 )
 
+
+	--trainButton:addEventListener( "tap", gotoTrain )
+
+    --local testButton = display.newText( sceneGroup, "test", display.contentCenterX, 570, native.systemFont, 44 )
+	--testButton:setFillColor( 0, 0.6, 1 )
+
+
+	--testButton:addEventListener( "tap", gotoTest )
+
+
+    
+    
 end
 
 
