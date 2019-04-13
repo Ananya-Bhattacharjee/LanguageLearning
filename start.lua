@@ -4,6 +4,20 @@ local composer = require( "composer" )
 local scene = composer.newScene()
 scoring=0
 
+local function onKeyEvent( event )
+
+	-- If the "back" key was pressed, then prevent it from backing out of the app.
+	-- We do this by returning true, telling the operating system that we are overriding the key.
+	if (event.keyName == "back") then
+		composer.gotoScene( "menu", { time=800, effect="crossFade" } )
+        return true
+	end
+    
+
+	-- Return false to indicate that this app is *not* overriding the received key.
+	-- This lets the operating system execute its default handling of this key.
+	return true
+end
 
 local function gotoStart()
 	composer.gotoScene( "start", { time=800, effect="crossFade" } )
@@ -45,6 +59,7 @@ function scene:create( event )
 
 	local sceneGroup = self.view
 	-- Code here runs when the scene is first created but has not yet appeared on screen
+    Runtime:addEventListener( "key", onKeyEvent );
 
 	local background = display.newImageRect( sceneGroup, "background.png", 600, 1200 )
 	background.x = display.contentCenterX

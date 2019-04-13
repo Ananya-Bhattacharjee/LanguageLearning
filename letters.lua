@@ -3,6 +3,22 @@ local composer = require( "composer" )
 
 local scene = composer.newScene()
 
+	-- Print which key was pressed down/up to the log.
+local function onKeyEvent( event )
+
+	-- If the "back" key was pressed, then prevent it from backing out of the app.
+	-- We do this by returning true, telling the operating system that we are overriding the key.
+	if (event.keyName == "back") then
+		composer.gotoScene( "menu", { time=800, effect="crossFade" } )
+        return true
+	end
+    
+
+	-- Return false to indicate that this app is *not* overriding the received key.
+	-- This lets the operating system execute its default handling of this key.
+	return true
+end
+
 
 local function gotoVowels()
 	composer.gotoScene( "vowels", { time=800, effect="crossFade" } )
@@ -36,7 +52,9 @@ function scene:create( event )
     local consonantsButton = display.newText( sceneGroup, "ব্যঞ্জনবর্ণ", display.contentCenterX, 700, native.systemFont, 44 )
 	consonantsButton:setFillColor( 0, 0.6, 1 )
 	consonantsButton:addEventListener( "tap", gotoConsonants )
+    
 
+    Runtime:addEventListener( "key", onKeyEvent );
 end
 
 

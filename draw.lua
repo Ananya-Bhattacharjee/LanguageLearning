@@ -16,6 +16,20 @@ end
 local function gotoDraw()
 	composer.gotoScene( "draw", { time=800, effect="crossFade" } )
 end
+local function onKeyEvent( event )
+
+	-- If the "back" key was pressed, then prevent it from backing out of the app.
+	-- We do this by returning true, telling the operating system that we are overriding the key.
+	if (event.keyName == "back") then
+		composer.gotoScene( "menu", { time=800, effect="crossFade" } )
+        return true
+	end
+    
+
+	-- Return false to indicate that this app is *not* overriding the received key.
+	-- This lets the operating system execute its default handling of this key.
+	return true
+end
 
 
 -- -----------------------------------------------------------------------------------
@@ -36,6 +50,7 @@ function scene:create( event )
 	background2.x = display.contentCenterX
 	background2.y = display.contentCenterY
     
+    Runtime:addEventListener( "key", onKeyEvent );
     
 
     

@@ -18,6 +18,20 @@ end
 local function gotoTrain()
 	composer.gotoScene( "train", { time=800, effect="crossFade" } )
 end
+local function gotoExit()
+    os.exit()
+end
+local function onKeyEvent( event )
+
+    if  "back" == event.keyName  then
+
+
+
+    end
+    return false
+
+end
+
 
 
 local function gotoTest()
@@ -74,6 +88,7 @@ function scene:create( event )
 
 	level2Button:addEventListener( "tap", gotoLevel2 )
     
+    Runtime:addEventListener( "key", onKeyEvent )
 
     
     
@@ -100,6 +115,11 @@ function scene:create( event )
     local drawButton = display.newText( sceneGroup,"আঁকি", display.contentCenterX, 650, native.systemFont, 44 )
 	drawButton:setFillColor( 0, 0.6, 1 )
 	drawButton:addEventListener( "tap", gotoDraw )
+    
+    local exitButton = display.newText( sceneGroup,"শেষ", display.contentCenterX, 750, native.systemFont, 44 )
+	exitButton:setFillColor( 0, 0.6, 1 )
+	exitButton:addEventListener( "tap", gotoExit )
+
     
     --local trainButton = display.newText( sceneGroup, "train", display.contentCenterX, 500, native.systemFont, 44 )
 	--trainButton:setFillColor( 0, 0.6, 1 )

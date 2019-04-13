@@ -7,6 +7,21 @@ local bg
 local i
 local menuButton
 local goButton
+local function onKeyEvent( event )
+
+	-- If the "back" key was pressed, then prevent it from backing out of the app.
+	-- We do this by returning true, telling the operating system that we are overriding the key.
+	if (event.keyName == "back") then
+		composer.gotoScene( "menu", { time=800, effect="crossFade" } )
+        return true
+	end
+    
+
+	-- Return false to indicate that this app is *not* overriding the received key.
+	-- This lets the operating system execute its default handling of this key.
+	return true
+end
+
 local function gotoLetters()
 	composer.gotoScene( "letters", { time=800, effect="crossFade" } )
 end
@@ -46,6 +61,7 @@ function scene:create( event )
 
 	local sceneGroup = self.view
 	-- Code here runs when the scene is first created but has not yet appeared on screen
+    Runtime:addEventListener( "key", onKeyEvent );
 
     local background = display.newImageRect( sceneGroup, "whiteBackground.jpg", 800, 1400 )
 	background.x = display.contentCenterX
