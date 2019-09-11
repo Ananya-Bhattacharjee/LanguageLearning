@@ -12,7 +12,7 @@ local function onKeyEvent( event )
 	-- If the "back" key was pressed, then prevent it from backing out of the app.
 	-- We do this by returning true, telling the operating system that we are overriding the key.
 	if (event.keyName == "back") then
-		composer.gotoScene( "menu", { time=800, effect="crossFade" } )
+		--composer.gotoScene( "menu", { time=800, effect="crossFade" } )
         return true
 	end
     
@@ -73,7 +73,7 @@ function scene:create( event )
     menuButton = display.newText( sceneGroup, "মেনু", display.contentCenterX, 20, native.systemFont, 44 )
     menuButton:setFillColor( 0, 0, 0 )
     menuButton:addEventListener( "tap", gotoMenu )
-    goButton = display.newText( sceneGroup, "দেখা শেষ", display.contentCenterX+200, 20, native.systemFont, 44 )
+    goButton = display.newText( sceneGroup, "দেখা শেষ", display.contentCenterX+180, 20, native.systemFont, 44 )
     goButton:setFillColor(0, 0, 0 )
     goButton:addEventListener( "tap", gotoSee2 )
 
@@ -209,7 +209,7 @@ function scene:create( event )
         menuButton = display.newText( sceneGroup, "মেনু", display.contentCenterX, 20, native.systemFont, 44 )
         menuButton:setFillColor( 0, 0, 0 )
         menuButton:addEventListener( "tap", gotoMenu )
-        goButton = display.newText( sceneGroup, "দেখা শেষ", display.contentCenterX+200, 20, native.systemFont, 44 )
+        goButton = display.newText( sceneGroup, "দেখা শেষ", display.contentCenterX+180, 20, native.systemFont, 44 )
         goButton:setFillColor( 0, 0, 0 )
         goButton:addEventListener( "tap", gotoSee2 )
 
@@ -225,7 +225,7 @@ function scene:create( event )
     menuButton = display.newText( sceneGroup, "মেনু", display.contentCenterX, 20, native.systemFont, 44 )
     menuButton:setFillColor( 0, 0, 0 )
     menuButton:addEventListener( "tap", gotoMenu )
-    goButton = display.newText( sceneGroup, "দেখা শেষ", display.contentCenterX+200, 20, native.systemFont, 44 )
+    goButton = display.newText( sceneGroup, "দেখা শেষ", display.contentCenterX+180, 20, native.systemFont, 44 )
     goButton:setFillColor( 0, 0, 0 )
     goButton:addEventListener( "tap", gotoSee2 )
 

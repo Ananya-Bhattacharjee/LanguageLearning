@@ -21,7 +21,7 @@ local function onKeyEvent( event )
 	-- If the "back" key was pressed, then prevent it from backing out of the app.
 	-- We do this by returning true, telling the operating system that we are overriding the key.
 	if (event.keyName == "back") then
-		composer.gotoScene( "menu", { time=800, effect="crossFade" } )
+		--composer.gotoScene( "menu", { time=800, effect="crossFade" } )
         return true
 	end
     
@@ -182,7 +182,7 @@ function scene:create( event )
         local peneraser="images/eraser.jpg"
 
         local draButton = display.newImageRect( sceneGroup, peneraser, 50, 50 )
-        draButton.x=display.contentCenterX-270
+        draButton.x=display.contentCenterX-250
         draButton.y=display.contentCenterY
 
         local nxtButton = display.newText( sceneGroup, ">", display.contentCenterX+200, 900, native.systemFont, 64 )
@@ -191,7 +191,7 @@ function scene:create( event )
         local prvButton = display.newText( sceneGroup, "<", display.contentCenterX+100, 900, native.systemFont, 64 )
         prvButton:setFillColor( 0, 0.6, 1 )
         local redButton = display.newImageRect( sceneGroup, "images/redraw.png", 50, 50 )
-        redButton.x=display.contentCenterX-270
+        redButton.x=display.contentCenterX-250
         redButton.y=display.contentCenterY-150
 
 
@@ -213,11 +213,11 @@ function scene:create( event )
     local penoreraser="images/eraser.jpg"
 
     local drButton = display.newImageRect( sceneGroup, penoreraser, 50, 50 )
-    drButton.x=display.contentCenterX-270
+    drButton.x=display.contentCenterX-250
     drButton.y=display.contentCenterY
     
     local reButton = display.newImageRect( sceneGroup, "images/redraw.png", 50, 50 )
-    reButton.x=display.contentCenterX-270
+    reButton.x=display.contentCenterX-250
     reButton.y=display.contentCenterY-150
 
     local function drawing()
@@ -435,6 +435,11 @@ function scene:create( event )
 
 	   composer.gotoScene( "menu", { time=800, effect="crossFade" } )
     end
+    if (event.keyName == "back") then
+		composer.gotoScene( "menu", { time=800, effect="crossFade" } )
+        gotoMenu()
+        return true
+	end
 
 
 

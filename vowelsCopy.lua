@@ -14,7 +14,7 @@ local function onKeyEvent( event )
 	-- If the "back" key was pressed, then prevent it from backing out of the app.
 	-- We do this by returning true, telling the operating system that we are overriding the key.
 	if (event.keyName == "back") then
-		composer.gotoScene( "menu", { time=800, effect="crossFade" } )
+		--composer.gotoScene( "menu", { time=800, effect="crossFade" } )
         return true
 	end
     
